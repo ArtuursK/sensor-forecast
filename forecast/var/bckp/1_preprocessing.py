@@ -8,9 +8,9 @@ MAIN_LOCATION = "../forecast"
 #                       parse_dates=['time'],
 #                       index_col='time')
 
-rawData = pd.read_csv("../sensordata/sensor_data_export_19_12_2021.csv",
-                                            parse_dates=['time'],
-                                            index_col='time')
+rawData = pd.read_csv("../../../sensordata/sensor_data_export_19_12_2021.csv",
+                      parse_dates=['time'],
+                      index_col='time')
 
 filteredRawData = rawData # copy dataframe to avoid modifying the original
 #filter out rows where temperature == 0 or humidity == 0 or soilmoisture == 0
@@ -26,7 +26,7 @@ print('After replacing missing values: ', preprocessedData.isnull().value_counts
 
 
 plt.plot(preprocessedData)
-#plt.show()
+plt.show()
 
 fig, axes = plt.subplots(nrows=3, ncols=1, dpi=120, figsize=(10,6))
 for i, ax in enumerate(axes.flatten()):

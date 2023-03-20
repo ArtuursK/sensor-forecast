@@ -8,9 +8,9 @@ TEST_SET_SIZE = "5" # in %
 #parameters to adjust sensor data
 OFFSET = 2; MAX = 1500; STEP = 50 #1500/50 = 30 experiments
 
-rawInitialData = pd.read_csv("../sensordata/sensor_data_export_19_12_2021.csv",
-                      parse_dates=['time'],
-                      index_col='time')
+rawInitialData = pd.read_csv("../../../sensordata/sensor_data_export_19_12_2021.csv",
+                             parse_dates=['time'],
+                             index_col='time')
 
 # Function for evaluating the Forecasts
 def forecast_accuracy(forecast, actual):
