@@ -4,6 +4,7 @@ from statsmodels.tsa.vector_ar.var_model import VAR
 from statsmodels.tsa.stattools import adfuller
 from sklearn.metrics import mean_squared_error, mean_absolute_error
 import matplotlib.pyplot as plt
+import time
 
 # Function to perform the Augmented Dickey-Fuller test
 def adf_test(series):
@@ -34,7 +35,7 @@ df = df.dropna()
 attribute_to_forecast = "Temperature"
 
 # Configure the number of forecast points
-num_forecasts = 50
+num_forecasts = 100
 
 # Split the data to forecast the last count_of_last_values_to_forecast values
 train, test = df[:-num_forecasts], df[-num_forecasts:]
@@ -42,7 +43,15 @@ train, test = df[:-num_forecasts], df[-num_forecasts:]
 # Create a VAR model and fit it to the training data
 model = VAR(train)
 lag_order = model.select_order(maxlags=12).aic
+
+# Start measuring the training time
+start_time = time.time()
+
 results = model.fit(maxlags=12, ic='aic')
+
+# Calculate the training time
+training_time = time.time() - start_time
+print(f'Training time: {training_time} seconds')
 
 # Forecast the test dataset
 forecast = results.forecast(train.values[-lag_order:], len(test))
