@@ -13,3 +13,41 @@ Some tasks for the future:
 [ ] add LSTM network extension
 ```
 
+
+## Run in virtual environment to fix issues with imported libraries:
+Open a terminal (or command prompt in Windows).
+Navigate to the directory where you want to create the virtual environment, for example:
+```
+cd /path/to/your/project
+```
+Run the following command to create a virtual environment named "myenv" (you can replace "myenv" with any name you prefer):
+
+```
+python -m venv myenv
+```
+Activate the virtual environment:
+For Windows:
+```
+myenv\Scripts\activate.bat
+```
+Now, you should see the virtual environment's name in your terminal prompt. This means the virtual environment is active, and you can install packages and run your Python script within this isolated environment.
+
+Install required packages:
+```
+pip install pandas scikit-learn
+```
+Run your Python script:
+```
+python your_script.py
+```
+When you're done working in the virtual environment, 
+you can deactivate it:
+```
+deactivate
+```
+
+The terminal prompt will return to its normal state, 
+indicating that you're no longer in the virtual environment.
+
+
+
