@@ -35,6 +35,8 @@ Now, you should see the virtual environment's name in your terminal prompt. This
 Install required packages:
 ```
 pip install pandas scikit-learn
+pip install keras
+pip install tensorflow
 ```
 Run your Python script:
 ```
