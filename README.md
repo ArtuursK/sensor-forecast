@@ -20,6 +20,7 @@ Navigate to the directory where you want to create the virtual environment, for 
 ```
 cd /path/to/your/project
 ```
+If there is no virtual environment setup yet
 Run the following command to create a virtual environment named "myenv" (you can replace "myenv" with any name you prefer):
 
 ```
@@ -35,8 +36,11 @@ Now, you should see the virtual environment's name in your terminal prompt. This
 Install required packages:
 ```
 pip install pandas scikit-learn
-pip install keras
 pip install tensorflow
+pip install matplotlib
+pip install keras
+pip install keras-tuner
+pip install statsmodels
 ```
 Run your Python script:
 ```
